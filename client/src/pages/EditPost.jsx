@@ -12,7 +12,7 @@ const CreatePost = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post/" + id).then((response) => {
+    fetch("https://mern-blog-new-va7x.onrender.com/post/" + id).then((response) => {
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setContent(postInfo.content);
@@ -32,7 +32,7 @@ const CreatePost = () => {
       data.set("file", files?.[0]);
     }
 
-    const response = await fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post", {
+    const response = await fetch("https://mern-blog-new-va7x.onrender.com/post", {
       method: "PUT",
       body: data,
       credentials: "include",
