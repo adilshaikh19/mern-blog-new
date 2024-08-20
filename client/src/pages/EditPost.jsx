@@ -12,7 +12,7 @@ const CreatePost = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/post/" + id).then((response) => {
+    fetch("https://mern-blog-new-va7x.onrender.com/post/" + id).then((response) => {
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setContent(postInfo.content);
