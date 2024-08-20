@@ -32,7 +32,7 @@ const CreatePost = () => {
       data.set("file", files?.[0]);
     }
 
-    const response = await fetch("https://mern-blog-new-va7x.onrender.com/post", {
+    const response = await fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post", {
       method: "PUT",
       body: data,
       credentials: "include",
