@@ -1,12 +1,13 @@
 import { formatISO9075 } from "date-fns";
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../UserContex";
 
 const PostPage = () => {
   const [postInfo, setPostInfo] = useState();
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:4000/post/${id}`).then((response) => {
@@ -14,7 +15,23 @@ const PostPage = () => {
         setPostInfo(postInfo);
       });
     });
-  }, []);
+  }, [id]);
+
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this post?");
+    if (confirmDelete) {
+      const response = await fetch(`http://localhost:4000/post/${id}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        navigate("/"); // Redirect to the homepage after deletion
+      } else {
+        alert("Failed to delete the post.");
+      }
+    }
+  };
 
   if (!postInfo) return "";
 
@@ -42,6 +59,23 @@ const PostPage = () => {
             </svg>
             Edit this post
           </Link>
+          <button onClick={handleDelete} className="delete-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+            Delete this post
+          </button>
         </div>
       )}
       <div className="image">
