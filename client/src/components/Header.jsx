@@ -5,7 +5,7 @@ import { UserContext } from "../UserContex";
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("https://mern-blog-new-va7x.onrender.com/profile", {
+    fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -15,7 +15,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch("https://mern-blog-new-va7x.onrender.com/logout", {
+    fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/logout", {
       credentials: "include",
       method: "POST",
     });
