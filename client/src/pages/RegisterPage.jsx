@@ -6,7 +6,7 @@ const RegisterPage = () => {
 
   async function register(e) {
     e.preventDefault();
-    const response = await fetch("https://mern-blog-new-va7x.onrender.com/register", {
+    const response = await fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
