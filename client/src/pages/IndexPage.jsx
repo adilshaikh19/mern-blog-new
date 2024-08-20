@@ -4,7 +4,7 @@ import Post from "../components/Post";
 const IndexPage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post").then((response) => {
+    fetch("https://mern-blog-new-va7x.onrender.com/post").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
