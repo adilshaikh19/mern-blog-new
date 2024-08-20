@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   async function login(e) {
     e.preventDefault();
-    const response = await fetch("https://mern-blog-new-va7x.onrender.com/login", {
+    const response = await fetch("https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
