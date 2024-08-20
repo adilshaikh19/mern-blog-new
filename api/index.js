@@ -18,7 +18,7 @@ const secret = "andfakseaia2484assdsdadd14";
 app.use(
   cors({
     credentials: true,
-    origin: ["https://mern-blog-new-frontend.onrender.com/"],
+    origin: ["https://mern-blog-new-frontend.onrender.com"],
   })
 );
 app.use(express.json());
