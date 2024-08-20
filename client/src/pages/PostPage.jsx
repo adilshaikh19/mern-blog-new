@@ -10,7 +10,7 @@ const PostPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post/${id}`).then((response) => {
+    fetch(`https://mern-blog-new-va7x.onrender.com/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -20,7 +20,7 @@ const PostPage = () => {
   const handleDelete = async () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this post?");
     if (confirmDelete) {
-      const response = await fetch(`https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/post/${id}`, {
+      const response = await fetch(`https://mern-blog-new-va7x.onrender.com/post/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -79,7 +79,7 @@ const PostPage = () => {
         </div>
       )}
       <div className="image">
-        <img src={`https://mern-blog-new-backend-k36urxg61-adilshaikh19s-projects.vercel.app/${postInfo.cover}`} alt="blog-image" />
+        <img src={`https://mern-blog-new-va7x.onrender.com/${postInfo.cover}`} alt="blog-image" />
       </div>
       <div dangerouslySetInnerHTML={{ __html: postInfo.content }} />
     </div>
