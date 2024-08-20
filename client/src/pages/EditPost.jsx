@@ -32,7 +32,7 @@ const CreatePost = () => {
       data.set("file", files?.[0]);
     }
 
-    const response = await fetch("http://localhost:4000/post", {
+    const response = await fetch("https://mern-blog-new-va7x.onrender.com/post", {
       method: "PUT",
       body: data,
       credentials: "include",
